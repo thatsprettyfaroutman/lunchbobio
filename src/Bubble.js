@@ -13,16 +13,20 @@ class Bubble extends Component {
   }
 
   render() {
+    const content = this.props.text || <img src={this.props.image} />
+
     return (
       <div
         className={classNames({
           'Bubble': true,
-          'Bubble--in-viewport': this.state.inViewport
+          'Bubble--image': !this.props.text,
+          'Bubble--in-viewport': this.state.inViewport,
+          'Bubble--not-bob': this.props.notBob
         })}
       >
         <div className="Bubble__avatar" />
         <div className="Bubble__inner">
-          Speechbubble
+          {content}
         </div>
         <Waypoint
           throttleHandler={scrollHandler => throttle(scrollHandler, 20)}

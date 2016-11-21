@@ -2,16 +2,46 @@ import React, { Component } from 'react'
 import './App.css'
 import Bubble from './Bubble'
 
+import bubbleSendLocation from './bubble__send-location.svg'
+import bubbleSendLocation2 from './bubble__send-location-2.svg'
+
+const uniqueId = function() {
+  let id = 0
+  return () => id++
+}()
 
 class App extends Component {
   render() {
 
-    const bubbles = []
-    for (let i = 0; i < 20; i++) {
-      bubbles.push(
-        <Bubble key={i} />
-      )
-    }
+    const bubbles = [
+      <Bubble
+        key={uniqueId()}
+        text="Let’s start by setting your location so I can find good lunch places around you."
+      />,
+      <Bubble
+        key={uniqueId()}
+        image={bubbleSendLocation}
+      />,
+      <Bubble
+        notBob={true}
+        key={uniqueId()}
+        image={bubbleSendLocation2}
+      />,
+      <Bubble
+        key={uniqueId()}
+        text="Then just say 'lunch'"
+      />,
+      <Bubble
+        notBob={true}
+        key={uniqueId()}
+        text="lunch"
+      />
+    ]
+    // for (let i = 0; i < 20; i++) {
+    //   bubbles.push(
+    //     <Bubble key={i} />
+    //   )
+    // }
 
     return (
       <div className="App">

@@ -11,13 +11,13 @@
   perspective-origin: 50% 50%;
 }
 
-.Bubble:nth-child(even) {
+.Bubble.Bubble--not-bob {
   align-self: flex-end;
   transform: translate3d(100px, 0, 0);
 }
 
 .Bubble--in-viewport,
-.Bubble--in-viewport:nth-child(even) {
+.Bubble--in-viewport.Bubble--not-bob {
   transform: translate3d(0, 0, 0);
 }
 
@@ -37,7 +37,7 @@
   transition: transform 400ms ease-in-out;
 }
 
-.Bubble:nth-child(even) .Bubble__avatar {
+.Bubble.Bubble--not-bob .Bubble__avatar {
   left: auto;
   right: 10px;
 }
@@ -51,8 +51,10 @@
 .Bubble__inner {
   display: flex;
   flex: 1;
+  box-sizing: border-box;
   margin-left: 93px;
   min-height: 120px;
+  padding: 20px;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -66,7 +68,11 @@
   transform-style: preserve-3d;
 }
 
-.Bubble:nth-child(even) .Bubble__inner {
+.Bubble--image .Bubble__inner {
+  /*background-color: transparent;*/
+}
+
+.Bubble.Bubble--not-bob .Bubble__inner {
   margin-left: 0;
   margin-right: 93px;
   transform-origin: 100% 50%;
@@ -74,7 +80,7 @@
 }
 
 .Bubble--in-viewport .Bubble__inner,
-.Bubble--in-viewport:nth-child(even) .Bubble__inner {
+.Bubble--in-viewport.Bubble--not-bob .Bubble__inner {
   opacity: 1;
   transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
 }
