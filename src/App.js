@@ -37,15 +37,11 @@ class App extends Component {
         text="lunch"
       />
     ]
-    // for (let i = 0; i < 20; i++) {
-    //   bubbles.push(
-    //     <Bubble key={i} />
-    //   )
-    // }
 
     return (
       <div className="App">
         <div className="Header" />
+        <div className="StickyBob" />
         <div className="CallToAction">
           <div className="CallToAction__inner">
             <p>Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
@@ -57,7 +53,6 @@ class App extends Component {
         <div className="Bubbles">
           {bubbles}
         </div>
-        <div className="StickyBob" />
       </div>
     );
   }

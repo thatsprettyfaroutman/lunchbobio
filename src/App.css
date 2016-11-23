@@ -57,6 +57,16 @@
   transform: translate3d(0, 120px, 0);
 }
 
+@media all and (max-width: 768px) {
+  .StickyBob {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    margin: 0 auto;
+  }
+}
+
 
 
 .CallToAction {
@@ -138,22 +148,6 @@
   transform: rotate3d(0, 0, 1, -45deg);
 }
 
-/*.Arrow::before,
-.Arrow::after {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 4px;
-  height: 50%;
-  background-color: #f0f;
-  transform: rotate3d(0, 0, 1, 45deg);
-}
-.Arrow::after {
-  transform: rotate3d(0, 0, 1, -45deg);
-  left: 0;
-  right: auto;
-}*/
-
 
 
 .Bubbles {
@@ -172,9 +166,6 @@
   animation-fill-mode: forwards;
   animation-duration: 400ms;
 }
-
-
-
 
 
 
