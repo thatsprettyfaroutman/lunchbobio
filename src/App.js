@@ -4,6 +4,7 @@ import Bubble from './Bubble'
 
 import bubbleSendLocation from './bubble__send-location.svg'
 import bubbleSendLocation2 from './bubble__send-location-2.svg'
+import bubbleFoodPlace from './foodplace.png'
 
 const uniqueId = function() {
   let id = 0
@@ -29,23 +30,40 @@ class App extends Component {
       />,
       <Bubble
         key={uniqueId()}
-        text="Then just say 'lunch'"
+        text="And then, just say 'lunch'"
       />,
       <Bubble
         notBob={true}
         key={uniqueId()}
         text="lunch"
-      />
+      />,
+      <Bubble
+        key={uniqueId()}
+        text="Awesome! I just found 70 places that serve lunch within 1,0km from your location."
+      />,
+      <Bubble
+        key={uniqueId()}
+        text="How about this:"
+      />,
+      <Bubble
+        key={uniqueId()}
+        image={bubbleFoodPlace}
+      />,
+      <Bubble
+        notBob={true}
+        key={uniqueId()}
+        text="👍"
+      />,
+      <Bubble
+        key={uniqueId()}
+        text="Awesome! Hope you enjoy!"
+      />,
     ]
-    // for (let i = 0; i < 20; i++) {
-    //   bubbles.push(
-    //     <Bubble key={i} />
-    //   )
-    // }
 
     return (
       <div className="App">
         <div className="Header" />
+        <div className="StickyBob" />
         <div className="CallToAction">
           <div className="CallToAction__inner">
             <p>Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
@@ -57,7 +75,13 @@ class App extends Component {
         <div className="Bubbles">
           {bubbles}
         </div>
-        <div className="StickyBob" />
+        <div className="CallToAction CallToAction--spaceAfter">
+          <div className="CallToAction__inner">
+            <p>Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
+            <a className="CallToAction__button" href="https://m.me/lunchbobthebot">Start conversation</a>
+            <p className="CallToAction__footer">Made with&nbsp;🍆&nbsp;&nbsp;<a href="https://www.wunderdog.fi/">@wunderdogsw</a></p>
+          </div>
+        </div>
       </div>
     );
   }
