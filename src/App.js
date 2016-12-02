@@ -5,6 +5,7 @@ import Bubble from './Bubble'
 import bubbleSendLocation from './bubble__send-location.svg'
 import bubbleSendLocation2 from './bubble__send-location-2.svg'
 import bubbleFoodPlace from './foodplace.png'
+import messengerCode from './messenger-code.png'
 
 const uniqueId = function() {
   let id = 0
@@ -66,7 +67,7 @@ class App extends Component {
         <div className="StickyBob" />
         <div className="CallToAction">
           <div className="CallToAction__inner">
-            <p>Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
+            <p>LunchBob is a Facebook Messenger chatbot that gives you recommendations for the best places to have lunch in your city.</p>
             <a className="CallToAction__button" href="https://m.me/lunchbobthebot">Start conversation</a>
             <p>Scroll down to see how it works</p>
             <div className="Arrow" />
@@ -77,7 +78,8 @@ class App extends Component {
         </div>
         <div className="CallToAction CallToAction--spaceAfter">
           <div className="CallToAction__inner">
-            <p>Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
+            <img src={messengerCode} className="messengerIcon" />
+            <p>Find a lunch place near you!</p>
             <a className="CallToAction__button" href="https://m.me/lunchbobthebot">Start conversation</a>
             <p className="CallToAction__footer">Made with&nbsp;🍆&nbsp;&nbsp;<a href="https://www.wunderdog.fi/">@wunderdogsw</a></p>
           </div>

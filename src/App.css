@@ -266,6 +266,16 @@
 
 
 
+.messengerIcon {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+
 @keyframes headerEnter {
   0% {
     transfrom: translate3d(0, -300px, 0);
