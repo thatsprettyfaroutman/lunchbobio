@@ -30,7 +30,7 @@ class Bubble extends Component {
   }
 
   render() {
-    const content = this.props.text || <img src={this.props.image} />
+    const content = this.props.text || <img src={this.props.image} alt="A message"/>
 
     return (
       <div

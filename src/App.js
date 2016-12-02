@@ -78,10 +78,10 @@ class App extends Component {
         </div>
         <div className="CallToAction CallToAction--spaceAfter">
           <div className="CallToAction__inner">
-            <img src={messengerCode} className="messengerIcon" />
+            <img src={messengerCode} className="messengerIcon" alt="Start conversation" />
             <p>Find a lunch place near you!</p>
             <a className="CallToAction__button" href="https://m.me/lunchbobthebot">Start conversation</a>
-            <p className="CallToAction__footer">Made with&nbsp;🍆&nbsp;&nbsp;<a href="https://www.wunderdog.fi/">@wunderdogsw</a></p>
+            <p className="CallToAction__footer">Made with&nbsp;🍆&nbsp;&nbsp;<a href="https://www.wunderdog.fi/">@wunderdog</a></p>
           </div>
         </div>
       </div>
