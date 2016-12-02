@@ -1,9 +1,11 @@
 .Bubble {
   position: relative;
   display: flex;
-  width: 100%;
+  box-sizing: border-box;
+  /*width: 100%;*/
   max-width: 400px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+  padding-left: 70px;
   align-self: flex-start;
   transform: translate3d(-100px, 0, 0);
   transition: transform 400ms ease-in-out;
@@ -11,7 +13,15 @@
   perspective-origin: 50% 50%;
 }
 
+@media all and (max-width: 767px) {
+  .Bubble {
+    margin-bottom: 40px;
+  }
+}
+
 .Bubble.Bubble--not-bob {
+  padding-left: 0;
+  padding-right: 0;
   align-self: flex-end;
   transform: translate3d(100px, 0, 0);
 }
@@ -25,12 +35,12 @@
 
 .Bubble__avatar {
   position: absolute;
-  top: 28px;
-  left: 10px;
-  width: 73px;
-  height: 64px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 60px;
   background-image: url('./bubble__avatar.svg');
-  background-position: center center;
+  background-position: top left;
   background-size: contain;
   background-repeat: no-repeat;
   transform: scale3d(0, 0, 1);
@@ -39,7 +49,7 @@
 
 .Bubble.Bubble--not-bob .Bubble__avatar {
   left: auto;
-  right: 10px;
+  right: 0;
 }
 
 .Bubble--in-viewport .Bubble__avatar {
@@ -52,8 +62,7 @@
   display: flex;
   flex: 1;
   box-sizing: border-box;
-  margin-left: 93px;
-  min-height: 120px;
+  width: 100%;
   padding: 20px;
   border-radius: 10px;
   justify-content: center;
@@ -66,17 +75,38 @@
     opacity 100ms ease-in-out,
     transform 400ms ease-in-out;
   transform-style: preserve-3d;
+  overflow: hidden;
 }
 
-.Bubble--image .Bubble__inner {
-  /*background-color: transparent;*/
+@media all and (max-width: 767px) {
+  .Bubble__inner {
+    background-color: #f0f0f0;
+  }
 }
 
-.Bubble.Bubble--not-bob .Bubble__inner {
-  margin-left: 0;
-  margin-right: 93px;
+.Bubble__inner img {
+  width: 100%;
+  height: auto;
+}
+
+.Bubble--not-bob .Bubble__inner {
+  background-color: #3982f6;
+  color: #fff;
   transform-origin: 100% 50%;
   transform: scale3d(1, 1, 1) translate3d(0, 300px, -800px);
+}
+
+.Bubble--image .Bubble__inner,
+.Bubble--image.Bubble--not-bob .Bubble__inner {
+  padding: 0;
+  background-color: transparent;
+}
+
+@media all and (max-width: 767px) {
+  .Bubble--image .Bubble__inner,
+  .Bubble--image.Bubble--not-bob .Bubble__inner {
+    border: 1px solid #f0f0f0;
+  }
 }
 
 .Bubble--in-viewport .Bubble__inner,

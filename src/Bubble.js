@@ -4,12 +4,29 @@ import throttle from 'lodash.throttle';
 import classNames from 'classnames';
 import './Bubble.css'
 
+const BOTTOM_OFFSET_MOBILE = 0
+const BOTTOM_OFFSET_DESKTOP = 370
+
 class Bubble extends Component {
   constructor(props) {
     super(props)
     this.state = {
       inViewport: false,
+      mobile: window.innerWidth < 1024,
     }
+
+    this._onResize = this._onResize.bind(this)
+    window.addEventListener('resize', this._onResize)
+  }
+
+  _onResize() {
+    this.setState({
+      mobile: window.innerWidth < 1024,
+    })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize)
   }
 
   render() {
@@ -24,7 +41,7 @@ class Bubble extends Component {
           'Bubble--not-bob': this.props.notBob
         })}
       >
-        <div className="Bubble__avatar" />
+        {!this.props.notBob && <div className="Bubble__avatar" />}
         <div className="Bubble__inner">
           {content}
         </div>
@@ -37,7 +54,7 @@ class Bubble extends Component {
             this.setState({inViewport: false})
           }}
           topOffset={-1000}
-          bottomOffset={370}
+          bottomOffset={this.state.mobile ? BOTTOM_OFFSET_MOBILE : BOTTOM_OFFSET_DESKTOP}
         />
       </div>
     )

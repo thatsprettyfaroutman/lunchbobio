@@ -22,12 +22,20 @@
   transform: translate3d(0, -300px, 0);
 }
 
+@media all and (max-width: 767px) {
+  .Header {
+    height: 110px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 .Header::after {
   content: '\0020';
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url('./header.svg');
+  background-image: url('./header.png');
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -45,6 +53,19 @@
   bottom: 0;
   left: 0;
   z-index: 1;
+  overflow: hidden;
+}
+
+@media all and (max-width: 767px) {
+  .StickyBob {
+    height: 150px;
+  }
+}
+
+.StickyBob::after {
+  content: '\0020';
+  width: 100%;
+  height: 100%;
   background-image: url('./bob.svg');
   background-position: center bottom;
   background-size: contain;
@@ -58,7 +79,7 @@
   transform: translate3d(0, 120px, 0);
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1023px) {
   .StickyBob {
     position: relative;
     right: auto;
@@ -73,7 +94,6 @@
 .CallToAction {
   display: flex;
   box-sizing: border-box;
-  width: 100%;
   min-height: calc(100% - 500px);
   margin-bottom: 40px;
   padding: 40px 0;
@@ -88,23 +108,56 @@
   animation-duration: 400ms;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1023px) {
   .CallToAction {
     position: relative;
     z-index: 1;
     min-height: 0;
     padding-top: 0;
+    padding-bottom: 0;
     opacity: 1;
     animation-name: none;
+    margin-bottom: 0;
+    min-height: 0;
+  }
+}
+
+.CallToAction--spaceAfter {
+  margin-bottom: 300px;
+}
+
+@media all and (max-width: 1023px) {
+  .CallToAction--spaceAfter {
+    margin-bottom: 40px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .CallToAction--spaceAfter {
+    margin-bottom: 0;
   }
 }
 
 .CallToAction__inner {
   box-sizing: border-box;
+  width: 100%;
   max-width: 600px;
   padding: 40px 80px;
   border-radius: 10px;
   background-color: #fff;
+}
+
+@media all and (max-width: 767px) {
+  .CallToAction__inner {
+    padding: 20px;
+    border-radius: 0;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .CallToAction--spaceAfter .CallToAction__inner {
+    padding-bottom: 40px;
+  }
 }
 
 .CallToAction p {
@@ -117,8 +170,9 @@
   display: block;
   width: 180px;
   margin: 30px auto;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: #0086FF;
+  background-color: #3982f6;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -137,6 +191,15 @@
   background-repeat: no-repeat;
 }
 
+.CallToAction__footer {
+  color: #888;
+  font-size: 12px;
+}
+
+.CallToAction__footer a {
+  color: #888;
+}
+
 
 
 .Arrow {
@@ -145,13 +208,19 @@
   height: 14px;
 }
 
+@media all and (max-width: 767px) {
+  .Arrow {
+    padding-top: 20px;
+  }
+}
+
 .Arrow::after {
   content: '\0020';
   display: block;
   width: 100%;
   height: 100%;
-  border-bottom: 3px solid #0086FF;
-  border-left: 3px solid #0086FF;
+  border-bottom: 3px solid #3982f6;
+  border-left: 3px solid #3982f6;
   transform-origin: 50% 50%;
   transform: rotate3d(0, 0, 1, -45deg);
 }
@@ -161,11 +230,14 @@
 .Bubbles {
   position: relative;
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
-  max-width: 560px;
+  max-width: 600px;
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 300px;
+  padding-bottom: 0;
+  border-left: 1px dashed rgba(255, 255, 255, 0.2);
+  border-right: 1px dashed rgba(255, 255, 255, 0.2);
   opacity: 0;
   animation-name: contentEnter;
   animation-iteration-count: 1;
@@ -173,6 +245,23 @@
   animation-timing-function: cubic-bezier(.86,0,.48,1);
   animation-fill-mode: forwards;
   animation-duration: 400ms;
+}
+
+@media all and (max-width: 1023px) {
+  .Bubbles {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    opacity: 1;
+    animation-name: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .Bubbles {
+    overflow: hidden;
+    background-color: #fff;
+  }
 }
 
 
